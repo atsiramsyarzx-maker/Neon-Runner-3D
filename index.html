@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neon Runner 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hud"><div><small>SKOR</small><span id="score">0</span></div><div><small>KOIN</small><span id="coins">0</span></div><div style="text-align:right"><small>REKOR</small><span id="best">0</span></div></div>
+<div id="mapinfo"></div>
+<div id="banner"></div>
+<div id="fx"></div>
+<div id="menu">
+  <h1>NEON RUNNER</h1>
+  <p id="final"></p>
+  <div id="who"></div>
+  <div id="wallet">🪙 <b id="walletN">0</b></div>
+  <div id="lobby">
+  <p>Hindari balok merah, kumpulkan koin kuning. Kecepatan terus bertambah!</p>
+  <p>🛡️ Perisai · 🧲 Magnet · ✖️2 Koin — ambil item melayang untuk bonus sementara.</p>
+  <p><b>PC:</b> ← → / A D pindah jalur · Spasi / ↑ lompat<br><b>HP:</b> geser kiri/kanan · ketuk untuk lompat</p>
+  <button id="play">MAIN</button><button id="shopBtn">TOKO KOTAK</button>
+  <div class="mini"><button id="exportBtn">Cadangkan</button><button id="importBtn">Pulihkan</button><button id="logout">Keluar</button></div></div>
+  <div id="shop" style="display:none"><p>Pilih atau beli kotak baru dengan koin hasil mainmu.</p><div id="grid"></div><button id="back">KEMBALI KE LOBI</button></div>
+</div>
+<div id="login">
+  <h1>NEON RUNNER</h1>
+  <p>Masuk atau daftar agar koin, kotak, dan rekormu tersimpan.</p>
+  <input id="user" placeholder="Nama pengguna" autocomplete="username" maxlength="16">
+  <input id="pass" type="password" placeholder="Kata sandi" autocomplete="current-password">
+  <p id="msg"></p>
+  <div><button id="loginBtn">MASUK</button><button id="regBtn">DAFTAR</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

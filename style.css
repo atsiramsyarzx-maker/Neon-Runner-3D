@@ -1,0 +1,39 @@
+:root{--bg:#0a0620;--fg:#f2eaff;--accent:#00f0ff;--pink:#ff2d95;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{height:100%;margin:0;background:var(--bg);overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--fg);touch-action:none;user-select:none}
+canvas{display:block;position:fixed;inset:0;width:100%;height:100%}
+#hud{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;padding:14px 18px;font-weight:700;font-size:20px;text-shadow:0 0 10px var(--accent);pointer-events:none}
+#hud small{display:block;font-size:11px;opacity:.7;font-weight:500;letter-spacing:.1em}
+#menu{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(10,6,32,.78);padding:24px}
+h1{margin:0 0 6px;font-size:clamp(34px,8vw,64px);letter-spacing:.06em;color:var(--accent);text-shadow:0 0 24px var(--accent),0 0 48px var(--pink)}
+p{margin:6px 0;opacity:.85;max-width:420px;line-height:1.5}
+button{margin-top:18px;padding:14px 36px;font-size:18px;font-weight:700;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;cursor:pointer;box-shadow:0 0 18px var(--accent)}
+button:hover{background:var(--accent);color:#000}
+#final{font-size:22px;color:var(--pink);font-weight:700;margin-top:8px}
+#menu{overflow-y:auto}
+#wallet{font-size:22px;font-weight:700;color:#ffd400;text-shadow:0 0 12px #ffd400;margin:8px 0}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;width:min(520px,92vw);max-height:52vh;overflow-y:auto;margin:10px auto;touch-action:pan-y}
+.card{border:1px solid rgba(0,240,255,.4);border-radius:14px;padding:10px;background:rgba(255,255,255,.05)}
+.card.on{border-color:var(--pink);box-shadow:0 0 14px var(--pink)}
+.sw{width:42px;height:42px;margin:0 auto 6px;border-radius:8px}
+.card b{display:block;font-size:13px}
+.card small{opacity:.7;font-size:12px}
+.card button{margin-top:8px;padding:6px 12px;font-size:13px;box-shadow:none}
+#menu button{margin-left:6px;margin-right:6px}
+#fx{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 90px);display:flex;gap:8px;justify-content:center;flex-wrap:wrap;pointer-events:none}
+#fx span{background:rgba(0,0,0,.45);border:1px solid var(--accent);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700}
+.card{isolation:isolate}
+.sw{position:relative}
+.sw::after{content:'';position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,var(--ac) 0%,transparent 70%);z-index:-1;animation:aura 1.6s ease-in-out infinite}
+.sw.ring::before{content:'';position:absolute;inset:-9px;border-radius:50%;background:conic-gradient(from 0deg,transparent,var(--ac),transparent 60%);-webkit-mask:radial-gradient(circle,transparent 58%,#000 60%);mask:radial-gradient(circle,transparent 58%,#000 60%);animation:spin 2.2s linear infinite}
+@keyframes aura{0%,100%{transform:scale(.85);opacity:.35}50%{transform:scale(1.25);opacity:.8}}
+@keyframes spin{to{transform:rotate(360deg)}}
+#banner{position:fixed;left:0;right:0;top:30%;text-align:center;font-size:clamp(26px,7vw,52px);font-weight:800;letter-spacing:.08em;color:#fff;text-shadow:0 0 20px var(--accent),0 0 40px var(--pink);opacity:0;pointer-events:none;transition:opacity .4s}
+#banner.show{opacity:1}
+#mapinfo{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 62px);text-align:center;font-size:12px;letter-spacing:.08em;opacity:.8;pointer-events:none;text-shadow:0 0 8px var(--accent)}
+#login{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(10,6,32,.94);padding:24px}
+#login button{margin:6px}
+input{display:block;width:min(280px,80vw);margin:6px auto;padding:12px 16px;font-size:16px;color:var(--fg);background:rgba(255,255,255,.07);border:1px solid var(--accent);border-radius:12px;outline:none;user-select:text;-webkit-user-select:text}
+input:focus{box-shadow:0 0 12px var(--accent)}
+#msg{min-height:20px;color:var(--pink);font-weight:600}
+#who{font-size:15px;opacity:.85;margin-top:4px}
+.mini button{font-size:13px;padding:6px 14px;margin-top:14px;box-shadow:none}
